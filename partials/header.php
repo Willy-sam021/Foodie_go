@@ -15,6 +15,10 @@ $cat=$category->fetch_category();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name='description' content='Foodiego, healthy choices delivered to your kitchen. An online platform that facilitates the connection and transaction between buyers and sellers of food products.'>
+    <meta name='keywords' content='Foodiego, online food delivery, healthy choices, food products, buyers and sellers, food delivery service, online marketplace, food shopping, convenience, quality food, local produce'>
+    <meta name='author' content='Williams samuel'>
+    <meta name='robots' content='index, follow'>
     <title>FOODIE_GO</title>
     <link href="assets/styles.css" rel="stylsheet">
 <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
