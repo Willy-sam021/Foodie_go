@@ -36,22 +36,26 @@ session_start();
             
             $id= $seller->login($name_email,$password);
 
-            
-            if($id['is_deleted']==FALSE){
-                $_SESSION['id']=$id;
-                 $_SESSION['role']=$role;
-                header('location:../landing2.php');
-                exit;
-            }elseif($id['is_deleted']==TRUE){ 
-                $_SESSION['errormsg']="you've been banned";
-                header('location:../login2.php');
-                exit;
+            if($id){
+                if($id['is_deleted']==FALSE){
+                    $_SESSION['id']=$id;
+                    $_SESSION['role']=$role;
+                    header('location:../landing2.php');
+                    exit;
+                }elseif($id['is_deleted']==TRUE){ 
+                    $_SESSION['errormsg']="you've been banned";
+                    header('location:../login2.php');
+                    exit;
+                }else{
+                    $_SESSION['errormsg']="invalid credentials";
+                    header('location:../login2.php');
+                    exit;
+                    }
             }else{
                 $_SESSION['errormsg']="invalid credentials";
                 header('location:../login2.php');
                 exit;
-                }
-                
+            }
         }else{
             $_SESSION['errormsg']="invalid credentials";
             header('location:../login2.php');

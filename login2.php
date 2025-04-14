@@ -10,14 +10,14 @@ unset($_SESSION['count_cart']);
 
 require_once "partials/header.php";
 
-    //print_r($_SESSION);
+    print_r($_SESSION);
 ?>
 <style>
     img{width: 64px;}
     /* body{height: 100%; margin: 0;} */
 </style>
 
-<div class="row " style='min-height:500px'>
+<div class="row " style='min-height:600px'>
     <div class="col-md-8 offset-md-2">
         <div class="row mt-4 " style='min-height:400px'>
             <div class="col-md-5 pt-md-5 ">

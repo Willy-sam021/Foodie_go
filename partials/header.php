@@ -1,4 +1,5 @@
 <?php 
+
 if(isset($_SESSION['id']) && isset($_SESSION['role'])){
   $id= $_SESSION['id'];
   $role= $_SESSION['role'];
@@ -6,7 +7,8 @@ if(isset($_SESSION['id']) && isset($_SESSION['role'])){
 require_once "class/Category.php";
 $category = new Category;
 $cat=$category->fetch_category();
-
+// print_r($_SESSION['id']);
+// echo $_SESSION['role'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -104,7 +106,7 @@ color:red !important;
 
 </head>
 
-<body class='d-flex flex-column min-vh-100'>
+<body class='d-flex flex-column min-vh-100 '>
 <nav class="navbar navbar-expand-lg   w-100 z-1" id="navvy">
     <div class="container-fluid">
       <a class="navbar-brand ms-4" href="landing2.php">Foodie_Go</a>
@@ -171,6 +173,6 @@ color:red !important;
   </nav>
 
     <!-- container -->
-    <div class="container-fluid contain_bg">
+  <div class="container-fluid contain_bg">
       
-      
+   

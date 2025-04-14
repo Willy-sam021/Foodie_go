@@ -1,6 +1,6 @@
  <!-- containerdiv -->
 </div>
-<!-- containerdiv -->
+
 <!-- footer -->
  
 <div class="container-fluid design  mt-5">
@@ -26,19 +26,17 @@
                         
                     <div class="col-md-3 white">
                         <h6 class='d-none d-md-block'>CUSTOMER SERVICE AND SUPPORT</h6>
-                        <p><a href="">Contact us</a></p>
-                        <p><a href="">FAQs</a></p>   
+                        <p><a href="about_us.php#contact">Contact us</a></p>
+                        <p><a href="faq.php">FAQs</a></p>   
                     </div>
                     <div class="col-md-3 white">
                         <h6 class='d-none d-md-block'>COMPANY INFORMATION</h6>
-                        <p><a href="">About us</a></p>
+                        <p><a href="about_us.php">About us</a></p>
                     </div>
                     <div class="col-md-3 white ">
                         <h6 class='d-none d-md-block'>POLICIES AND LEGAL</h6>
-                        <p><a href="">Privacy policy|</a></p>
-                        <p><a href="">Terms and condition</a></p>
-                        <p><a href="">Cooking policy</a></p>
-                        <p><a href="">Refund and cancellation policy</a></p>
+                        <p><a href="privacy.php">Privacy policy|</a></p>
+                        
                         <hr class='d-block d-md-none' color='black' size='10'>
                     </div>
                     
