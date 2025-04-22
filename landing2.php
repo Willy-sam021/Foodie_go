@@ -31,10 +31,6 @@ if(isset($_SESSION['cart'])){
     
  $prod= new Product;
     $products=$prod->view_all_products();
-    // echo "<pre>";
-    // print_r($products);
-    // echo "</pre>";
-
 
 ?>
 
@@ -44,7 +40,6 @@ if(isset($_SESSION['cart'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>FOODIE_GO</title>
-
 <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="assets/animate.min.css">
 <link rel="stylesheet" type="text/css" href="assets/fontawesome/css/all.css">
@@ -127,17 +122,15 @@ body{
                 <?php 
                 if(isset($_SESSION['id']) && isset($_SESSION['role'])){
                     
-                ?>
-                        
-                            
-                        
-                        <div class='mt-3'>
-                            <form class="d-flex ms-3" role="search">
-                            <input class="form-control me-2 ms-5"  width='100%' id="navsearch" type="search" placeholder="Enter product name" aria-label="Search">
-                            <button class="btn searchbutton" type="button" id="btnsearch">Search</button>
-                        </form>
-                        </div>
-                        
+                ?>     
+                   <!-- search bar--  -->
+                <div class='mt-3'>
+                    <form class="d-flex ms-3" role="search">
+                        <input class="form-control me-2 ms-5"  width='100%' id="navsearch" type="search" placeholder="Enter product name" aria-label="Search">
+                        <button class="btn searchbutton" type="button" id="btnsearch">Search</button>
+                    </form>
+                </div>
+                <!-- search bar ends  -->
 
                 <ul class="navbar-nav ms-auto p-2 me-4 mb-2 mb-lg-0">
                     <li class="nav-item shift">
@@ -150,14 +143,13 @@ body{
                             <ul class="dropdown-menu bg-dark" id='cattydroppy' >
                                 
                                 <?php 
+                                if($cat){
                                 foreach($cat as $cate){
                                     echo "<li class='categories'   value='$cate[category_id]'><a class='dropdown-item' >$cate[category_names]</a></li>";
 
                                 }
-
+                            }
                                 ?>
-                                
-                                
                                 
                             </ul>
                     </li>
@@ -204,7 +196,9 @@ body{
     </nav>
 
     <!-- container -->
+  
     <div class="container-fluid m-0 p-0">
+           <!-- navbar -->
         <div class="row mt-2" style='min-height:500px'>
             <nav class="col rounded   sidebar" >
                 <div class="sidebar-sticky p-3 rounded" id='sidebar'>
@@ -229,15 +223,13 @@ body{
                     <button class="btn btn-success mt-2" id='location'>search</button>
                 </div>
             </nav> 
-        
+        <!-- nav bar ends -->
     
-    
- 
-
             <div class="col-md-10 shadow-lg"  id='landing_display'>
                 <div class="row mt-2 " id="display">
 
-                     <?php 
+                     <?php
+                     //looping of products
                         if($products){
                         foreach($products as $product){
 
@@ -270,6 +262,7 @@ body{
                                 ";  
                             
                         ?>
+                        <!-- looping ends -->
             
                 </div>
             </div>

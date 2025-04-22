@@ -8,14 +8,7 @@ require_once "seller_deleted_guard.php";
 $sell=new Seller;
 $categories=$sell->fetch_category();
 $id=$_SESSION['id'];
-
-
-
-   
-
 $order= new Order;
-
-
 
 require_once "partials/header.php"
  ?>

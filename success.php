@@ -7,33 +7,23 @@ require_once "class/Product.php";
 $order= new Order;
 
 $orderid= $_SESSION['order_id'];
-
-
-
-
-//$order_deets=$order->fetch_order_details($orderid);
-// echo "<pre>";
-// print_r($order_deets);
-// echo "</pre>";
-
-
 $product= new Product;
 require_once "partials/header.php";
 
 
 ?>
- <?php
-                    if(isset($_SESSION['payment_error'])){
-                        echo "<p class='alert alert-danger fw-bold'>".$_SESSION['payment_error']."</p>";
-                        unset($_SESSION['payment_error']);
-                    }
-                ?>
-                <?php 
-                    if(isset($_SESSION['payment_feedback'])){
-                        echo "<p class='alert alert-info fw-bold'>".$_SESSION['payment_feedback']."</p>";
-                        unset($_SESSION['payment_feedback']);
-                    }
-                ?>
+<?php
+    if(isset($_SESSION['payment_error'])){
+        echo "<p class='alert alert-danger fw-bold'>".$_SESSION['payment_error']."</p>";
+        unset($_SESSION['payment_error']);
+    }
+?>
+<?php 
+    if(isset($_SESSION['payment_feedback'])){
+        echo "<p class='alert alert-info fw-bold'>".$_SESSION['payment_feedback']."</p>";
+        unset($_SESSION['payment_feedback']);
+    }
+?>
         <div class="row ">
             <div class="col-md-12 d-none d-md-block">
                 <h1>confirm payment</h1>
@@ -107,12 +97,8 @@ require_once "partials/header.php";
             </div>
         </div>
         <div class="row d-block d-md-none  ">
-                <div class="col">
-
-                    <h1 class='text-center text-capitalize'>confirm payment</h1>
-                   
-                
-            
+            <div class="col">
+                <h1 class='text-center text-capitalize'>confirm payment</h1>
                     <?php 
                         $serial=1;
                         if(isset($_SESSION['cart'])){
@@ -132,7 +118,7 @@ require_once "partials/header.php";
                                 
                                 <p>Quantity:<?php echo $lex['quantity']?></p>
                                 <p>Total amount:<?php echo $pro['product_price'] * $lex['quantity']?></p>
-                               
+                                
                             </div>
                             
                         </div>
@@ -143,26 +129,16 @@ require_once "partials/header.php";
                 }else{
                     echo "<p class='alert alert-danger'>No items in cart</p>";
                 }             
-                ?>
-                   
-                   <form action="process/process_paystack.php" method='post'>
-                             <div class='justify-content-end d-flex flex-column ms-5 align-items-end'>
-                             <p>Grand Total:&nbsp;&#8358;<?php echo Number_format($_SESSION['grand_total'])?></p>
-                             <button class='btn btn-success' name="btnpaystack">confirm</button>
-                            </div>
-                            </form>
-                     
-                </div>
-                
+                ?> 
+                <form action="process/process_paystack.php" method='post'>
+                    <div class='justify-content-end d-flex flex-column ms-5 align-items-end'>
+                        <p>Grand Total:&nbsp;&#8358;<?php echo Number_format($_SESSION['grand_total'])?></p>
+                        <button class='btn btn-success' name="btnpaystack">confirm</button>
+                    </div>
+                </form>        
             </div>
+        </div>
 
-            
-
-
-
-
-
-
-
+  
 <script src="assets/bootstrap/js/bootstrap.bundle.js"></script>
 <?php require_once "partials/footer.php"?>

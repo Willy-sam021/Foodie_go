@@ -24,7 +24,9 @@ require_once "userguard.php";
                 </div>
             </div>
 <hr>
+
             <div class="row">
+                <!-- our mission -->
                 <div class="col">
                         <h1 class='text-center text-capitalize'>OUR MISSION</h1>
                         <p>At Foodie go, our mission is to redefine the raw food experience by building a sustainable, people-first ecosystem that connects local producers with health-conscious consumers.
@@ -36,6 +38,8 @@ require_once "userguard.php";
                         Our commitment lies in creating a world where healthy food choices are accessible to all — and where every purchase supports a bigger purpose.
                         </p>
                 </div>
+
+                <!-- our vision -->
                 <div class="col">
                     <h1 class='text-center text-capitalize'>OUR VISION</h1>
                     <p>We envision a world where fresh, raw, and wholesome food is within reach for everyone — regardless of location or lifestyle.
@@ -51,6 +55,7 @@ require_once "userguard.php";
             </div>
             <hr>
             <div class="row">
+                <!-- what we offer -->
                 <div class="col">
                     <h1 class='text-center text-capitalize'>What we offer</h1>
                     <p>A space for farmers and sellers to showcase their raw food products <br>
@@ -63,6 +68,7 @@ require_once "userguard.php";
                     </p>
                 </div>
                 <div class="col">
+                    <!-- why choose us -->
                         <h1 class='text-center text-capitalize'>why choose us</h1>
                         <p>🔄 Direct Farm-to-Table Access <br>
                             No middlemen. Just real people with real produce. <br>
@@ -74,6 +80,7 @@ require_once "userguard.php";
             </div>
 <hr>
             <div class="row">
+                <!-- our story  -->
                 <div class="col">
                     <h1 class='text-center'>Our story</h1>
                     <p>This project began with a simple idea: What if buying and selling raw food was as easy as ordering takeout?
@@ -85,7 +92,7 @@ require_once "userguard.php";
 
             <div class="row">
                 
-
+        <!-- contact us -->
                     <div class="col-6 border">
                         <div id="contact">
                             <h1 class='text-center'>Contact us</h1>

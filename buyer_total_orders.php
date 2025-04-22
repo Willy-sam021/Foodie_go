@@ -5,19 +5,17 @@
     require_once "buyer_guard.php";
     require_once "userguard.php";
 
-$id= $_SESSION['id'];//BUYER GUARD AS HANDLED THIS
+$id= $_SESSION['id'];//BUYER GUARD HAS HANDLED THIS
 $buyer= new Buyer;
 
 $order= new Order;
 $buyer_order=$order->buyer_order_deets($id['buyer_id']);
 
-// echo "<pre>";
-// print_r($buyer_order);
-// echo "</pre>";
+
    require_once "partials/header.php";
 ?>
 
- <div class="row" style='min-height:500px'>
+<div class="row" style='min-height:500px'>
     <?php require_once "partials/buyer_navbar.php"?>
      <div class="col">
         <button class="btn btn-primary mt-1 d-block d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
@@ -38,6 +36,7 @@ $buyer_order=$order->buyer_order_deets($id['buyer_id']);
                     </thead>
                     <tbody>
                         <?php 
+                        // looping starts
                             $sn=1;
                             if($buyer_order){
                             foreach($buyer_order as $ord){
@@ -71,19 +70,15 @@ $buyer_order=$order->buyer_order_deets($id['buyer_id']);
                         echo "<p class='alert alert-danger'>No orders yet</p>";
                     }
                     ?>
+                    <!-- looping ends -->
 
-
-
-
-
-                       
                     </tbody>
                 </table>
             </div>        <!-- RESPONSIVENESS -->
 
-
        
              <?php 
+            //  looping starts
                 $sn=1;
                 if($buyer_order){
                 foreach($buyer_order as $ord){
@@ -121,11 +116,12 @@ $buyer_order=$order->buyer_order_deets($id['buyer_id']);
               }else{
                 echo "<p class='alert alert-danger'>No orders yet</p>";
             }
+            // looping ends
             ?>
 
-        </div>
-
     </div>
+        <!-- end of responsiveness -->
+</div>
 
     <script src="assets/bootstrap/js/bootstrap.bundle.js"></script>
     <script src='assets/jquery-3.7.1.min.js'></script>

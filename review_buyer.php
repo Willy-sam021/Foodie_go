@@ -33,6 +33,7 @@ require_once "partials/header.php";
         <button class="btn btn-primary mt-1 d-block d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
              Menu
         </button>
+        <!-- checking for session errors -->
             <?php
                 if(isset($_SESSION['buyer_error_review'])){
                 echo "<p class='alert alert-danger fw-bold'>".$_SESSION['buyer_error_review']."</p>";
@@ -43,6 +44,8 @@ require_once "partials/header.php";
                     echo "<p class='alert alert-success fw-bold'>".$_SESSION['buyer_feedback_review']."</p>";
                     unset($_SESSION['buyer_feedback_review']);
                 }?>
+
+            <!-- buyer review form starts -->
             <form action="buyer_process/process_reviews.php" method='post'>
                 <div>
                     <h1 class='text-center'>Buyer's Review</h1>
@@ -61,6 +64,7 @@ require_once "partials/header.php";
                     <p class='text-center'>  <button class='btn p-2 col-3 btn-outline-warning btn-success mt-2' name='btnreview'>Send</button></p>
                 </div>
             </form>
+            <!-- form ends -->
         </div>
 </div>
 

@@ -46,7 +46,9 @@ require_once "partials/header.php"
             ?>
         <div>
         <form action='seller_process/process_productupdate.php' method='post' enctype='multipart/form-data'>
-            <?php if(is_array($view)){
+            <?php 
+            // looping starts
+            if(is_array($view)){
                 foreach($view as $pro){
             ?>  
                     <div class='row mb-2'>
@@ -72,9 +74,7 @@ require_once "partials/header.php"
                           <label class='ms-md-3' >upload product image</label>
                         </div>
                         <div class="col-md-8">
-                          <input type="file" name='upload' id='upload' value="<?php echo $pro['product_image']?>" class='form-control'>
-                            
-                                
+                          <input type="file" name='upload' id='upload' value="<?php echo $pro['product_image']?>" class='form-control'>  
                                 <?php 
                                     if($pro['product_image']){
                                         echo"<div class=' d-flex mt-md-3'>
@@ -146,6 +146,7 @@ require_once "partials/header.php"
                 }else{
                     echo "<p class='alert alert-danger'>No product to update </p>";
                 }
+                // looping ends
         ?>
     </div>
 </div>

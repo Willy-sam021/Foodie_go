@@ -12,10 +12,12 @@ if(!isset($_SESSION['transaction_id'])){
 }
 $orderid=$_SESSION['order_id'];
 $grand_total=$_SESSION['grand_total'];
+// instantiation
 $pay= new Payment ;
 
 $ref=$_SESSION['transaction_id'];
 
+// calling the paystack method from the payment class
 $rsp=$pay->paystack_verify_step2($ref);
 
 if($rsp && ($rsp->status)){
@@ -23,6 +25,7 @@ if($rsp && ($rsp->status)){
     $paystatus="successful";
     $amt_deducted=$rsp->data->amount;
     $data = json_encode($rsp);
+    // updating the order is
     $order->update_order_total($orderid,$grand_total);
     $_SESSION['buyer_feedbackprofile']="payment was successful";
     
@@ -31,11 +34,13 @@ if($rsp && ($rsp->status)){
     $paystatus="failed";
     $amt_deducted = 0;
     $data = json_encode($rsp);
+    // updating the order id
     $order->update_order_total($orderid,$amt_deducted);
  $_SESSION['buyer_errorprofile']="payment failed";
  
 }
 
+// updating the payment table
 $chk=$pay->update_payment($paystatus,$data,$ref);
 if($chk){
    $_SESSION['buyer_feedbackprofile']="payment complete";

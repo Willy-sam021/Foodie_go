@@ -6,7 +6,6 @@
     require_once "buyer_guard.php";
     require_once "userguard.php";
 
-
 $id= $_SESSION['id'];
 
 $rate= new Review;
@@ -18,9 +17,6 @@ $review=$rate->buyer_view_reviews($_SESSION['buyer_id']);
 
    require_once "partials/header.php";
    
-   
-
-
 ?>
  
 <div class="row" style='min-height:500px'>
@@ -43,14 +39,12 @@ $review=$rate->buyer_view_reviews($_SESSION['buyer_id']);
                         <th>comment</th>
                         <th>review date</th>
                         
-                        
-                        
-                        
                     </tr>
                 </thead>
                 <tbody>
                     <?php 
                         $sn=1;
+                        // loop starts
                         if($review){
                         foreach($review as $rev){
                     
@@ -77,6 +71,7 @@ $review=$rate->buyer_view_reviews($_SESSION['buyer_id']);
                     }else{
                         echo "<p class='alert alert-danger'>No reviews made yet</p>";
                     }
+                    // loop ends
                     ?>
                 </tbody>
             </table>

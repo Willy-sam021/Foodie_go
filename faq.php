@@ -4,7 +4,6 @@ require_once "partials/header.php";
 require_once "userguard.php";
 
 ?>
-
     <div class="row" style='min-height:500px'>
         <div class="col">
             <div class="row mb-4">
@@ -101,7 +100,7 @@ require_once "userguard.php";
        
         </div>     
     </div>  
-        <!-- container div -->
+       
     
     
     <script src="assets/bootstrap/js/bootstrap.bundle.js"></script>

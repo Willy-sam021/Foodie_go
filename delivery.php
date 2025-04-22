@@ -6,17 +6,7 @@ require_once "class/Product.php";
 
  $order= new Order;
 
-// $orderid= $_SESSION['order_id'];
-
 $seller_orders=$order->seller_orders($_SESSION['seller_id']);
-// echo "<pre>";
-// print_r($seller_orders);
-// echo "</pre>";
-
-// echo "<pre>";
-// print_r($order_deets);
-// echo "</pre>";
-
 require_once "partials/header.php";
 ?>
 
@@ -56,6 +46,7 @@ require_once "partials/header.php";
                     </thead>
                     <tbody>
                         <?php
+                        // looping starts
                             $serial=0;
                         if($seller_orders!=false){
                             foreach($seller_orders as $or){
@@ -126,13 +117,9 @@ require_once "partials/header.php";
                         echo "<p class='alert alert-danger'>No orders yet</p>";
                     }
                  ?>
-
-
-
-
-
         </div>
 </div>
+
 <script src="assets/bootstrap/js/bootstrap.bundle.js"></script>
 <script src='assets/jquery-3.7.1.min.js'></script>
 <script>

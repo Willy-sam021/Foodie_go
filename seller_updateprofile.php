@@ -9,26 +9,16 @@ $states=$seller->fetch_all_states();
 $sell=$seller->identify_id($id['seller_id']);
 $se=$seller->identify_seller_update($id['seller_id']);
 
-// echo"<pre>";
-// print_r($_SESSION['id']);
-// print_r($se);
-// echo"</pre>";
-
-
 require_once "partials/header.php";
 
 ?>
 
 <div class="row" style='min-height: 400px;'>
     <?php require_once "partials/seller_sidebar.php"?>  
-     
-        
-            
-            
-                <div class="col-md-6 offset-md-1 mt-3  shadow shadow-md">
-                <button class="btn btn-primary mt-1 d-block d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-                                 Menu
-                             </button>
+        <div class="col-md-6 offset-md-1 mt-3  shadow shadow-md">
+            <button class="btn btn-primary mt-1 d-block d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                 Menu
+            </button>
                 <h1 class='text-center'>Profile update</h1>
                 <?php 
                     if(isset($_SESSION['seller_profile'])){
@@ -125,8 +115,7 @@ require_once "partials/header.php";
                     </div>
                 </form>
             </div>  
-        </div>
-    
+        </div> 
 </div>
 <script src="assets/bootstrap/js/bootstrap.bundle.js"></script>
 <script src='assets/jquery-3.7.1.min.js'></script>

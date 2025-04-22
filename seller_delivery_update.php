@@ -5,21 +5,13 @@
     require_once "seller_guard.php";
     require_once "userguard.php";
 
-   
-
 if(!isset($_GET['id'])|| empty($_GET['id']) || !is_Numeric($_GET['id']) ){
     header("location:delivery.php");
     exit;
 }
 
-
 $_SESSION['delivery_id']=$_GET['id'];
-
-
 require_once "partials/header.php";
-   
-   
-
 
 ?>
  
@@ -49,8 +41,6 @@ require_once "partials/header.php";
 
                 </form>
             </div>
-                    
-      
     </div>
 
     <script src="assets/bootstrap/js/bootstrap.bundle.js"></script>

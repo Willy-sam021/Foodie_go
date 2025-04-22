@@ -35,15 +35,8 @@ require_once "partials/header.php";
 
 ?>
 
-
-    
-    
-<!-- first ROW -->
-
 <div class="row  " style='min-height:500px'>
-
 <!-- RESPONSIVE -->
-        
             <div class="col">
                 <h4 class='text-center'>Product Details</h4>
                 <div class="row">

@@ -12,7 +12,6 @@ require_once "partials/header.php"
 
 <div class="row style='min-height:500px'">
     <?php require_once "partials/seller_sidebar.php"?>  
-                
     
     <div class="col-md-7 mt-2 offset-md-1 bg-light shadow shadow-lg ">
     <button class="btn btn-primary mt-1 d-block d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
@@ -20,6 +19,7 @@ require_once "partials/header.php"
     </button>
         <h1 class='mt-2 text-center text-capitalize'>Add new Product</h1>
         <hr color='green' size='8'>
+        <!-- checking for error message -->
         <?php 
             if(isset($_SESSION['errormsg_update'])){
                 echo "<p class='alert alert-danger text-danger'>".$_SESSION['errormsg_update']."</p>";
@@ -34,6 +34,7 @@ require_once "partials/header.php"
             }
         
         ?>
+        <!-- seller addnew product form -->
         <form action="seller_process/addnew_product.php" method='post' enctype='multipart/form-data'>
             <div>
                 <label class='form-label fw-bold'>Product Name</label>
