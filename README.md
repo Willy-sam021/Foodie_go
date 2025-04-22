@@ -1,2 +1,3 @@
 project Title: Foodie_Go
-description: An e-commerce web apllication where raw food like chicken/fish is being sold which facilitates the connection between the buyers and the sellers
+An interactive platform that connects buyers and sellers of raw food items like chicken and fish. Developed using Object-Oriented PHP, featuring user registration, product listings, shopping cart, order management, and delivery tracking. Integrated Paystack API for secure online payments.
+Tech Stack: PHP (OOP), MySQL, HTML, CSS, JavaScript, AJAX, jQuery, Paystack API
