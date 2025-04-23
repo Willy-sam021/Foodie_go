@@ -19,7 +19,7 @@ $categories=$category->fetch_category();
 $buy=$buyer->fetch_all_states();
 
 if(!isset($_SESSION['id']) && !isset($_SESSION['role'])){
-   header('location:login2.php');
+   header('location:index.php');
    exit;
 }  
 
