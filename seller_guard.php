@@ -1,7 +1,7 @@
 <?php
 
 if($_SESSION['role']!= "seller"){
-    header('location:login2.php');
+    header('location:index.php');
     exit;
 }
 
