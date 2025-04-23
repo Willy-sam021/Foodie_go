@@ -14,7 +14,7 @@ session_start();
 
         if(empty($name_email)||empty($password)||empty($role)){
             $_SESSION['errormsg']="All fields are required";
-            header("location:../login2.php");
+            header("location:../index.php");
             exit;
         }
 
@@ -27,7 +27,7 @@ session_start();
                 exit;
             }else{
                 $_SESSION['errormsg']="invalid credentials";
-                header('location:../login2.php');
+                header('location:../index.php');
                 exit;
             }
             
@@ -44,21 +44,21 @@ session_start();
                     exit;
                 }elseif($id['is_deleted']==TRUE){ 
                     $_SESSION['errormsg']="you've been banned";
-                    header('location:../login2.php');
+                    header('location:../index.php');
                     exit;
                 }else{
                     $_SESSION['errormsg']="invalid credentials";
-                    header('location:../login2.php');
+                    header('location:../index.php');
                     exit;
                     }
             }else{
                 $_SESSION['errormsg']="invalid credentials";
-                header('location:../login2.php');
+                header('location:../index.php');
                 exit;
             }
         }else{
             $_SESSION['errormsg']="invalid credentials";
-            header('location:../login2.php');
+            header('location:../index.php');
             exit;
         }
         
@@ -69,7 +69,7 @@ session_start();
       
      }else{
          $_SESSION['errormsg']="Please register properly";
-        header('location:../login2.php');
+        header('location:../index.php');
         exit;}
 
 

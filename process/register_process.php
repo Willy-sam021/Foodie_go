@@ -76,7 +76,7 @@
                     exit;
                 }else{
                     $_SESSION['feedback']="registration successful please login";
-                    header('location:../login2.php');
+                    header('location:../index.php');
                     
                      exit;
                 }
@@ -88,7 +88,7 @@
                 exit;
             }else{
                 $_SESSION['feedback']="registration successful please login";
-                header('location:../login2.php');
+                header('location:../index.php');
                 
                 exit;
             }
