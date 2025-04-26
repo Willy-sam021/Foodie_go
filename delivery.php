@@ -120,10 +120,14 @@ require_once "partials/header.php";
         </div>
 </div>
 
-<script src="assets/bootstrap/js/bootstrap.bundle.js"></script>
-<script src='assets/jquery-3.7.1.min.js'></script>
-<script>
-   <?php require_once "partials/seller_logout.js"?>
-</script>
 
 <?php require_once "partials/footer.php"?>
+<script src="assets/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src='assets/jquery-3.7.1.min.js'></script>
+        <script>
+            <?php require_once "partials/seller_logout.js"?>
+        </script>
+
+
+    </body>
+</html>

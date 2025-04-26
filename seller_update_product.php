@@ -153,6 +153,8 @@ require_once "partials/header.php"
     
          <!-- container div -->
 
+<?php require_once "partials/footer.php"?>
+
 <script src="assets/bootstrap/js/bootstrap.bundle.js"></script>
  <script src="assets/jquery-3.7.1.min.js"></script>
 <script>
@@ -183,40 +185,15 @@ require_once "partials/header.php"
                     alert(err)
                 }
 
-
-
                 })
 
-        
-
-
-       
-
         })
-    
-    
-    
-    
     
         //doucment .write    
     })
 
 
-
-    
-
    </script> 
 
-
-
-
-
-
-
-
-
-
-
-
-
-<?php require_once "partials/footer.php"?>
+</body>
+</html>

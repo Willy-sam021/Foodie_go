@@ -129,6 +129,8 @@ $all_products=$test->seller_view_products($_SESSION['seller_id']);
 </div>   
 
 
+
+<?php require_once "partials/footer.php"?>
 <script src="assets/bootstrap/js/bootstrap.bundle.js"></script>
 <script src="assets/jquery-3.7.1.min.js"> </script>
 <script>
@@ -180,8 +182,8 @@ $all_products=$test->seller_view_products($_SESSION['seller_id']);
    })
 </script>
 
-<?php require_once "partials/footer.php"?>
 
 
-    
-<script src="admin_assets/jquery-3.7.1.min.js"> </script>
+</body>
+</html>
+

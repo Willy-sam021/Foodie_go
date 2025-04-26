@@ -205,8 +205,7 @@ require_once "partials/header.php";
   </div>
 </div>
 
-
-
+<?php require_once "partials/footer.php"?>
 
 <script src="admin_assets/jquery-3.7.1.min.js"> </script>
 <script>
@@ -241,7 +240,10 @@ require_once "partials/header.php";
   
    })
 </script>
-<?php require_once "partials/footer.php"?>
+
+</body>
+</html>
+
 
 
     

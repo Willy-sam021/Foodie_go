@@ -6,6 +6,6 @@ require_once "../class/Seller.php";
     unset($_SESSION['id']);
     unset($_SESSION['role']);
     session_unset();
-    header("location:../login2.php");
+    header("location:../index.php");
     session_destroy();
 ?>

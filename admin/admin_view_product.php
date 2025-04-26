@@ -3,10 +3,6 @@ session_start();
  require_once "admin_guard.php";
     require_once "class/Admin.php";
     
-   
-
-
-
     // $user_total=$test->display_usercount();
     // $order_total=$test->display_ordercount();
 
@@ -111,6 +107,8 @@ session_start();
 
 
 
+<?php require_once "partials/footer.php"?>
+
 <script src="admin_assets/jquery-3.7.1.min.js"> </script>
 <script>
 
@@ -135,8 +133,9 @@ session_start();
    })
 </script>
 
-<?php require_once "partials/footer.php"?>
 
+</body>
+</html>
 
     
-<script src="admin_assets/jquery-3.7.1.min.js"> </script>
+<!-- <script src="admin_assets/jquery-3.7.1.min.js"> </script> -->

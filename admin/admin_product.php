@@ -203,7 +203,8 @@ $seller1=$sell->fetch_all_sellers();
 
     </div>
    
-    <script src="admin_assets/jquery-3.7.1.min.js"> </script>
+<?php require_once "partials/footer.php"?>
+<script src="admin_assets/jquery-3.7.1.min.js"> </script>
 <script>
 
   $(document).ready(function(){
@@ -239,21 +240,14 @@ $seller1=$sell->fetch_all_sellers();
           
       
       })
-
-
-
-
-    
    
    <?php require_once "partials/admin_logout.js"?>
    
-
-  
-  
   })
 </script>
+</body>
+</html>
 
-<?php require_once "partials/footer.php"?>
 
 
     

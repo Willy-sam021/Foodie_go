@@ -269,8 +269,12 @@ body{
         </div>
     
  
-    
-<script src="assets/bootstrap/js/bootstrap.bundle.js"></script>
+  
+
+
+   <?php require_once "partials/footer.php"?>
+  
+   <script src="assets/bootstrap/js/bootstrap.bundle.js"></script>
 <script src='assets/jquery-3.7.1.min.js'></script>
     <script>
         // setTimeout(() => {
@@ -363,9 +367,9 @@ body{
         })
     </script>
 
-
-
-   <?php require_once "partials/footer.php"?>
+    
+    </body>
+</html>
   
   
   

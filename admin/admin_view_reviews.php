@@ -77,6 +77,8 @@ $review=$rate->admin_view_reviews();
     </div>
 
     
+   
+    <?php require_once "partials/footer.php"?>
     <script src='assets/jquery-3.7.1.min.js'></script>
     <script>
         $(document).ready(function(){
@@ -86,5 +88,5 @@ $review=$rate->admin_view_reviews();
 
     </script>
 
-    <?php require_once "partials/footer.php"?>
-    
+    </body>
+</html>

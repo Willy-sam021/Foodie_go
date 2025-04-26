@@ -43,7 +43,8 @@ require_once "partials/header.php";
             </div>
     </div>
 
-    <script src="assets/bootstrap/js/bootstrap.bundle.js"></script>
+<?php require_once "partials/footer.php"?>
+<script src="assets/bootstrap/js/bootstrap.bundle.js"></script>
     <script src='assets/jquery-3.7.1.min.js'></script>
     <script>
         $(document).ready(function(){
@@ -88,5 +89,8 @@ require_once "partials/header.php";
         })
     </script>
 
-    <?php require_once "partials/footer.php"?>
+
+    </body>
+</html>
+  
     

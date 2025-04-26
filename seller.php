@@ -57,11 +57,15 @@ require_once "partials/header.php"
 
 
 
+<?php require_once "partials/footer.php"?>
 <script src='assets/jquery-3.7.1.min.js'></script>
 <script>
    <?php require_once "partials/seller_logout.js"?>
    </script>
-<?php require_once "partials/footer.php"?>
+
+</body>
+</html>
+
 
 
 

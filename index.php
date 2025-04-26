@@ -10,7 +10,7 @@ unset($_SESSION['count_cart']);
 
 require_once "partials/header.php";
 
-    print_r($_SESSION);
+    // print_r($_SESSION);
 ?>
 <div class="row " style='min-height:600px'>
     <div class="col-md-8 offset-md-2">
@@ -87,3 +87,6 @@ require_once "partials/header.php";
 </div>
     
 <?php require_once "partials/footer.php"?>
+    
+    </body>
+</html>

@@ -67,4 +67,7 @@
 </div>
     
         <?php require_once "partials/footer.php"?>
+    </body>
+</html>
+
     

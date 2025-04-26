@@ -29,7 +29,8 @@ $review=$rate->buyer_view_reviews($_SESSION['buyer_id']);
         </button>
         
             <h2 class='text-center'>REVIEWS</h2>
-             <table class='table d-none d-md-block table-striped table_responsive'>
+            <div class='d-none d-md-block'>
+             <table class='table  table-striped table_responsive'>
                 <thead>
                     <tr>
                         <th>S/N</th>
@@ -75,6 +76,7 @@ $review=$rate->buyer_view_reviews($_SESSION['buyer_id']);
                     ?>
                 </tbody>
             </table>
+            </div>
     </div>
 
     <div class="col d-md-none">
@@ -87,7 +89,7 @@ $review=$rate->buyer_view_reviews($_SESSION['buyer_id']);
     ?>
     <h3 class='text-center'><?php echo $sn++?></h3>
     <div class="row border">
-        <div class="col">
+        <div class="col-md-6">
             
             <p>product name :<span class='fw-bold'><?php echo $rev['product_name']?></span></p>
             <p>Review rating :<span class='fw-bold'><?php echo $rev['review_rating']?></span></p>
@@ -95,8 +97,8 @@ $review=$rate->buyer_view_reviews($_SESSION['buyer_id']);
             <p>Review date <span class='fw-bold'><?php echo date('d/F/Y',strtotime($rev['review_date']))?></span></p>
 
         </div>
-        <div class="col">
-            <img src="upload/<?php echo $rev['product_image']?>" width='50%' alt="" >
+        <div class="col-md-6">
+            <img src="upload/<?php echo $rev['product_image']?>"  class='img-fluid' alt="" >
         </div>
        
     </div>
@@ -116,23 +118,17 @@ $review=$rate->buyer_view_reviews($_SESSION['buyer_id']);
        
         
     </div>
-    
-
-
-
-
-
-
-
-
 
 </div>
 
-<script src="assets/bootstrap/js/bootstrap.bundle.js"></script>
+
+<?php require_once "partials/footer.php"?>
+    
+    <script src="assets/bootstrap/js/bootstrap.bundle.js"></script>
     <script src='assets/jquery-3.7.1.min.js'></script>
     <script>
          <?php require_once "partials/buyer_logout.js"?>
     </script>
 
-    <?php require_once "partials/footer.php"?>
-    
+    </body>
+</html>

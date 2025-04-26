@@ -120,6 +120,9 @@ require_once "partials/header.php";
 
 
 
+
+<?php require_once "partials/footer.php"?>
+
 <script src="admin_assets/jquery-3.7.1.min.js"> </script>
 <script>
 
@@ -140,14 +143,9 @@ require_once "partials/header.php";
    
    <?php require_once "partials/admin_logout.js"?>
    
-
-
-
-
    })
 </script>
-
-<?php require_once "partials/footer.php"?>
-
-
-    
+ 
+</body>
+</html>
+   

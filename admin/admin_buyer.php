@@ -190,6 +190,8 @@
         </div>
 
 
+<?php require_once "partials/footer.php"?>
+
 <script src="admin_assets/jquery-3.7.1.min.js"> </script>
 <script>
 
@@ -239,17 +241,12 @@
 
         
       })
-
-
-
-
-
-
-
   
    })
 </script>
-<?php require_once "partials/footer.php"?>
+</body>
+</html>
+
 
 
     

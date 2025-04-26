@@ -70,7 +70,9 @@ $buyer_order=$admin->buyer_view_deets();
     </div>
 
     
-    <script src='admin_assets/jquery-3.7.1.min.js'></script>
+    
+<?php require_once "partials/footer.php"?>
+<script src='admin_assets/jquery-3.7.1.min.js'></script>
 <script>
 $(document).ready(function(){
    
@@ -80,5 +82,6 @@ $(document).ready(function(){
 
 </script>
 
-<?php require_once "partials/footer.php"?>
-    
+
+</body>
+</html>

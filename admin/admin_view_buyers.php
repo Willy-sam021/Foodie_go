@@ -88,6 +88,8 @@ $all_buyers=$test->display_all_buyers();
      
       
 
+
+<?php require_once "partials/footer.php"?>
 <script src="admin_assets/jquery-3.7.1.min.js"> </script>
 <script>
   
@@ -99,7 +101,9 @@ $all_buyers=$test->display_all_buyers();
 
 </script>
 
-<?php require_once "partials/footer.php"?>
+</body>
+</html>
+
 
 
     

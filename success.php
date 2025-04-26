@@ -140,5 +140,8 @@ require_once "partials/header.php";
         </div>
 
   
-<script src="assets/bootstrap/js/bootstrap.bundle.js"></script>
+
 <?php require_once "partials/footer.php"?>
+<script src="assets/bootstrap/js/bootstrap.bundle.js"></script>
+</body>
+</html>

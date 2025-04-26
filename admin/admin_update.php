@@ -144,14 +144,12 @@ $pro=$sell->view_a_product($_SESSION['product_update']);
     
         </main>
      </div>
-                    
-            
-        
-    
+                      
          <!-- container div -->
+<!-- <script src="admin_assets/jquery-3.7.1.min.js"> </script> -->
 
-
-         <script src="admin_assets/jquery-3.7.1.min.js"></script>
+<?php require_once "partials/footer.php"?>
+<script src="admin_assets/jquery-3.7.1.min.js"></script>
 <script>
     $(document).ready(function(){
         
@@ -191,26 +189,9 @@ $pro=$sell->view_a_product($_SESSION['product_update']);
     
         //doucment .write    
     })
-
-
-
     
 
    </script> 
 
-
-<script src="admin_assets/jquery-3.7.1.min.js"> </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<?php require_once "partials/footer.php"?>
+</body>
+</html>
