@@ -84,18 +84,24 @@ require_once "partials/header.php";
                             <div class='row '>
                                 <div class="col-md-6 ">
                                     <label>Enter password</label>
+                                    <div class="input-group">
                                     <input type="password" name="pwd" id='pwd' class="form-control border-success ">
+                                    <span class="input-group-text" id='eyes'><i class="fa-solid fa-eye-slash"></i></span>
+                                    </div>
                                 </div>
                                 <div class="col-md-6 ">
                                     <label >Confirm password</label>
+                                    <div class="input-group">
                                     <input type="password" name="confpwd" id='confpwd'  class="form-control border-success ">
+                                    <span class="input-group-text" id='passEyes'><i class="fa-solid fa-eye-slash"></i></span>
+                                    </div>
                                 </div>
                             </div>
                             
                             <div class="row">
                                 <div class="col-md-12">
                                     <p class="text-center"> <button class="btn btn-success col-md-4 mt-3" id='button' name='button'>Sign Up</button></p>
-                                    <p class="text-center"> <a href='login2.php'p id='button'style='color:red' name='button'>back</a></p>
+                                    <p class="text-center"> <a href='index.php' id='button'style='color:red' name='button'>back</a></p>
                                 </div>
                             </div>
                      </form>
@@ -110,6 +116,32 @@ require_once "partials/header.php";
 <script src="assets/jquery-3.7.1.min.js"> </script>
 <script>
     $(document).ready(function(){
+
+        $('#eyes').click(function(){
+            if($('#pwd').attr('type') == 'password'){
+                $('#pwd').attr('type', 'text');
+                $('#eyes i').removeClass('fa-eye-slash');
+                $('#eyes i').addClass('fa-eye');
+            }else{
+                $('#pwd').attr('type', 'password');
+                $('#eyes i').removeClass('fa-eye');
+                $('#eyes i').addClass('fa-eye-slash');
+            }
+        })
+        $('#passEyes').click(function(){
+            if($('#confpwd').attr('type') == 'password'){
+                $('#confpwd').attr('type', 'text');
+                $('#passEyes i').removeClass('fa-eye-slash');
+                $('#passEyes i').addClass('fa-eye');
+            }else{
+                $('#confpwd').attr('type', 'password');
+                $('#passEyes i').removeClass('fa-eye');
+                $('#passEyes i').addClass('fa-eye-slash');
+            }
+        })
+
+    
+
 
         $('#vendor').hide()
 

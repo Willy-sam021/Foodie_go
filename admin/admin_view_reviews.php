@@ -12,19 +12,14 @@ $review=$rate->admin_view_reviews();
 
    require_once "partials/header.php";
    
-   
-
-
 ?>
  
     <div class="row" style='min-height:500px'>
     <?php require_once "partials/admin_sidebar.php"?>
-
-                    
-      
+               
         <div class="col-md-10">
             <h2 class='text-center'>REVIEWS</h2>
-             <table class='table table-striped table_responsive'>
+             <table class='table table-striped table_responsive' id='dashtable'>
                 <thead>
                     <tr>
                         <th>S/N</th>
@@ -34,9 +29,7 @@ $review=$rate->admin_view_reviews();
                         <th>buyer lastname</th>
                         <th>review rating</th>
                         <th>comment</th>
-                        <th>review date</th>
-                        
-                        
+                        <th>review date</th>            
                         
                     </tr>
                 </thead>
@@ -79,14 +72,19 @@ $review=$rate->admin_view_reviews();
     
    
     <?php require_once "partials/footer.php"?>
-    <script src='assets/jquery-3.7.1.min.js'></script>
+    <script src='admin_assets/jquery-3.7.1.min.js'></script>
+    <script src='//cdn.datatables.net/2.2.2/js/dataTables.min.js'></script>
     <script>
         $(document).ready(function(){
-   
+            // alert('i am here')
+    let table = new DataTable('#dashtable')
+
    <?php require_once "partials/admin_logout.js"?>
    })
 
     </script>
+
+
 
     </body>
 </html>

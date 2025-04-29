@@ -18,7 +18,8 @@
     
     <link rel="icon" href="/docs/4.1/assets/img/favicons/favicon.ico">
     <link rel="stylesheet" href="admin_assets/admin_styles.css">
-    
+    <link rel="stylesheet" href="//cdn.datatables.net/2.2.2/css/dataTables.dataTables.min.css">
+
     <style>  
          *{margin: 0px;padding: 0px;}
          #navvy{position:sticky; top: 0px;width:100vw}

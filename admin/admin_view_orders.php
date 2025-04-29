@@ -6,9 +6,7 @@
 
 $admin= new Admin;
 $buyer_order=$admin->buyer_view_deets();
-
-   require_once "partials/header.php";
-   
+require_once "partials/header.php";
 ?>
  
     <div class="row" style='min-height:500px'>
@@ -17,13 +15,12 @@ $buyer_order=$admin->buyer_view_deets();
       
         <div class="col">
             <h2 class='text-center'>ORDERS</h2>
-            <table class='table table-striped'>
+            <table class='table table-striped' id='dashtable'>
                 <thead>
                     <tr>
                         <th>S/N</th>
                         <th>order date</th>
-                        <th>amount </th>
-                        
+                        <th>amount </th>  
                         <th>action</th>
                                                                                 
                     </tr>
@@ -53,9 +50,6 @@ $buyer_order=$admin->buyer_view_deets();
                             ?></td>
                             <td><a href="admin_one_product.php?id=<?php echo $ord['order_id']?>&buyer_id=<?php echo $ord['buyer_id']?>" class='btn btn-success'>view more</a></td>
                             
-                            
-                            
-                            
                         </tr>
 
                     <?php
@@ -73,9 +67,12 @@ $buyer_order=$admin->buyer_view_deets();
     
 <?php require_once "partials/footer.php"?>
 <script src='admin_assets/jquery-3.7.1.min.js'></script>
+<script src='//cdn.datatables.net/2.2.2/js/dataTables.min.js'></script>
+
 <script>
 $(document).ready(function(){
-   
+   let table = new DataTable('#dashtable')
+   console.log(table);
    <?php require_once "partials/admin_logout.js"?>
 
    })

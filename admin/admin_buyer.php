@@ -75,15 +75,20 @@
                 ?>
           <div class="table-responsive">
          
-            <table class="table table-striped table-sm">
-            <tr>
+            <table class="table table-striped table-sm" id='dashtable'>
+                <thead>
+                  <tr>
+                        <th>S/N</th>
                         <th>firstname</th>
                         <th>lastname</th>
                         <th>phone</th>
                         <th>Action</th>
                         
                     </tr>
+                  </thead>
+                  <tbody>
                      <tr>
+                      <td><?php $sn=1; echo $sn++?></td>
                         <td><?php
                         if($user){
                           echo $user['buyer_fname'];
@@ -110,10 +115,8 @@
                         
                     </tr>
 
-                  
+                  </tbody>
                 </table>
-               
-            </table>
           </div>
         </main>
   
@@ -193,10 +196,12 @@
 <?php require_once "partials/footer.php"?>
 
 <script src="admin_assets/jquery-3.7.1.min.js"> </script>
+<script src='//cdn.datatables.net/2.2.2/js/dataTables.min.js'></script>
+
 <script>
 
   $(document).ready(function(){
-  
+  let table= new DataTable('#dashtable')
     $('#btndelete').click(function(event){
             event.preventDefault()
             var x = confirm('are you sure you want to delete this buyer ?')

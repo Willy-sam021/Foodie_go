@@ -49,10 +49,6 @@ require_once "partials/header.php";
               </button>
             </div>
           </div>
-
-
-
-
               <?php 
                     if(isset($_SESSION['admin_error'])){
                         echo "<p class='alert alert-danger text-danger'>".$_SESSION['admin_error']."</p>";
@@ -69,18 +65,19 @@ require_once "partials/header.php";
                 ?>
           <h2>VIEW PRODUCT</h2>
           <div class="table-responsive">
-            <table class="table table-striped table-sm">
-            <tr>        
+            <table class="table table-striped table-sm" id='dashtable'>
+                <thead>
+                  <tr>        
                         <th>S/N</th>
                         <th>product name</th>
                         <th>product image</th>
-                        
+                        <th>Quantity</th>
                         <th>product price</th>
                         <th>buyer name</th>
                         
-                        
-                        
                     </tr>
+                  </thead>
+                  <tbody>
                   <?php
                   $sn=1;
                   if(is_array($one_product)){
@@ -90,7 +87,7 @@ require_once "partials/header.php";
                         <td><?php echo $product['product_name']?></td>
                         <td><img src="../upload/<?php echo $product['product_image']?>" class='fifty' alt="product image"></td>
                         
-                        
+                        <td><?php echo $product['quantity_purchased']?></td>
                         <td><?php echo $product['product_price']?></td>
                         <td><?php 
                         if($buyer){
@@ -109,7 +106,7 @@ require_once "partials/header.php";
                     echo "<p class='alert alert-danger'>order not found</p>";
                   }
                   ?> 
-                  
+                  </tbody>
                 </table> 
                 <div>
                 <a href="admin_view_orders.php"class='btn btn-success' >Back</a>
@@ -121,10 +118,12 @@ require_once "partials/header.php";
 <?php require_once "partials/footer.php"?>
 
 <script src="admin_assets/jquery-3.7.1.min.js"> </script>
+<script src='//cdn.datatables.net/2.2.2/js/dataTables.min.js'></script>
+
 <script>
 
   $(document).ready(function(){
-  
+  let table = new DataTable('#dashtable')
     $('.buttondelete').click(function(){
             
             var x = confirm('are you sure you want to delete this product ?')

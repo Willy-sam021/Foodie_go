@@ -49,14 +49,17 @@ $all_buyers=$test->display_all_buyers();
           ?>
           <div class="table-responsive">
          
-            <table class="table table-striped table-sm">
-            <tr>
+            <table class="table table-striped table-sm" id='dashtable'>
+              <thead>
+                   <tr>
                         <th>S/N</th>
                         <th>firstname</th>
                         <th>lastname</th>
                         <th>phone</th>
-                        <th colspan='2'>Activity</th>
+                        <th>Activity</th>
                     </tr>
+                </thead>
+                <tbody>
                   <?php 
                   $sn=1;
                   if($all_buyers){
@@ -65,7 +68,6 @@ $all_buyers=$test->display_all_buyers();
                         <td><?php echo $sn++?></td>
                         <td><?php echo $buyer['buyer_fname']?></td>
                         <td><?php echo $buyer['buyer_lname']?></td>
-                        
                         <td><?php echo $buyer['buyer_phone']?></td>
                         <td>
                             <a href="admin_buyer.php?id=<?php echo $buyer['buyer_id']?>" class='btn btn-success ms-1'>view details</a>
@@ -79,9 +81,9 @@ $all_buyers=$test->display_all_buyers();
                       echo "<p class='alert alert-danger'>No buyers yet</p>";
                     }
                   ?> 
-                </table>
-               
-            </table>
+                  </tbody>
+              </table>
+            
           </div>
         </main>
      </div>
@@ -91,10 +93,12 @@ $all_buyers=$test->display_all_buyers();
 
 <?php require_once "partials/footer.php"?>
 <script src="admin_assets/jquery-3.7.1.min.js"> </script>
+<script src='//cdn.datatables.net/2.2.2/js/dataTables.min.js'></script>
+
 <script>
   
     $(document).ready(function(){
-   
+   let table= new DataTable('#dashtable')
    <?php require_once "partials/admin_logout.js"?>
    })
 

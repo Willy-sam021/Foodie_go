@@ -50,7 +50,11 @@ require_once "partials/header.php";
                             <label for="">Enter Email</label>
                         </div>
                         <div class="col-md-7">
-                            <input type="email" name='name_email' class="form-control border border-success">
+                            <!-- <div class="input-group"> -->
+                            <input type="email" name='name_email' id='email' class="form-control border border-success">
+                            <!-- <span class="input-group-text" id='eyes'><i class="fa-solid fa-eye-slash"></i></span> -->
+                                
+                            
                         </div>
                     </div>
                     <div class='row mt-4'>
@@ -58,7 +62,10 @@ require_once "partials/header.php";
                             <label>Enter Password</label>
                         </div>
                         <div class="col-md-7">
-                            <input type="password" name='pwd'  class="form-control border border-success">
+                            <div class="input-group">
+                            <input type="password" name='pwd' id='password' class="form-control border border-success">
+                            <span class="input-group-text" id='passEyes'><i class="fa-solid fa-eye-slash"></i></span>
+                            </div>
                         </div>
                     </div>
                     <div class=" row mt-4 mb-2">
@@ -87,6 +94,37 @@ require_once "partials/header.php";
 </div>
     
 <?php require_once "partials/footer.php"?>
-    
+<script src="assets/bootstrap/js/bootstrap.bundle.js"></script>
+<script src='assets/jquery-3.7.1.min.js'></script>
+<script>
+    $(document).ready(function(){
+        $('#eyes').click(function(){
+            if($('#email').attr('type') == 'password'){
+                $('#email').attr('type', 'text');
+                $('#eyes i').removeClass('fa-eye-slash');
+                $('#eyes i').addClass('fa-eye');
+            }else{
+                $('#email').attr('type', 'password');
+                $('#eyes i').removeClass('fa-eye');
+                $('#eyes i').addClass('fa-eye-slash');
+            }
+        });
+
+        $('#passEyes').click(function(){
+            if($('#password').attr('type') == 'password'){
+                $('#password').attr('type', 'text');
+                $('#passEyes i').removeClass('fa-eye-slash');
+                $('#passEyes i').addClass('fa-eye');
+            }else{
+                $('#password').attr('type', 'password');
+                $('#passEyes i').removeClass('fa-eye');
+                $('#passEyes i').addClass('fa-eye-slash');
+            }
+        });
+
+
+
+    });
+</script>
     </body>
 </html>

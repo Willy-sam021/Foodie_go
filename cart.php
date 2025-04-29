@@ -36,68 +36,69 @@ require_once "partials/header.php"
 <!-- cart table session -->
 <div class="row d-none d-lg-block" style='min-height: 100vh;'>
     <div class="col ">
-        <table class='table table-lg table-striped  ' >
-            <tr>
-                <th>S/N</th>
-                <th>Item</th>
-                <th>image</th>
-                <th>Price</th>
-                <th>Quantity</th>
-                
-                <th>Action</th>
-            </tr>
-            <tr>
-                <?php 
-                // loop starts
-                    $serial=1;
-                    foreach($carty as $lex){
-                        $prod=$product->get_product_cart($lex['productid']);
-                        foreach($prod as $pro){                            
-                ?>
-                <td><?php echo $serial++ ;?></td>
-                <td>
-                    <div>
-                        <p class='ms-2'>Product name: <span><?php  echo $pro['product_name']; ?></span><br>
-                        <span>Vendor name: <span><?php echo $pro['business_name']?></span><br><p>
-                        
+        <table class='table table-lg table-striped' id='dashtable' >
+            <thead>    
+                <tr>
+                    <th>S/N</th>
+                    <th>Item</th>
+                    <!-- <th>product name</th> -->
+                    <th>image</th>
+                    <th>Price</th>
+                    <th>Quantity</th> 
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <?php 
+                    // loop starts
+                        $serial=1;
+                        foreach($carty as $lex){
+                            $prod=$product->get_product_cart($lex['productid']);
+                            foreach($prod as $pro){                            
+                    ?>
+                    <td><?php echo $serial++ ;?></td>
+                    <td>
+                        <div>
+                            <p class='ms-2'>Product name: <span><?php  echo $pro['product_name']; ?></span><br>
+                            <span>Vendor name: <span><?php echo $pro['business_name']?></span><br>            
                         </div>  
+                            
+                    </td>
+                    <td>
+                        <div>
+                            <img src="upload/<?php echo $pro['product_image']?>" class='sixtyfour' alt="">
+                        </div>
+                    </td>
+                    <td>
+
+                        <p><span>&#8358;<?php echo $pro['product_price']?></span></p>
+                    </td>
+                    <td>
                         
-                </td >
-                <td>
-                    <div>
-                        <img src="upload/<?php echo $pro['product_image']?>" class='sixtyfour' alt="">
-                    </div>
-                </td>
-                <td>
-
-                    <p><span>&#8358;<?php echo $pro['product_price']?></span></p>
-                </td>
-                <td>
+                        <form >
+                        <input type="hidden" name="product_id" value="<?php echo $lex['productid'];?>" id='proddy'>
+                        <input type="number" name='quantity' id='quantity' min="1" class='text-center'>
+                        
+                        <button class='btn btn-primary btnupdate btncart' value="<?php echo $pro['product_id']?>" name='btnupdate' >update</button>
+                        </form>
+                        
+                    </td>
                     
-                    <form >
-                    <input type="hidden" name="product_id" value="<?php echo $lex['productid'];?>" id='proddy'>
-                    <input type="number" name='quantity' id='quantity' min="1" class='text-center'>
+                    <td>
+                        <a href="process/remove_cart.php?id=<?php echo $pro['product_id']?>" class="btn btncart btn-danger">remove from cart</a>
                     
-                    <button class='btn btn-primary btnupdate btncart' value="<?php echo $pro['product_id']?>" name='btnupdate' >update</button>
-                    </form>
-                    
-                </td>
+                    </td>
                 
-                <td>
-                    <a href="process/remove_cart.php?id=<?php echo $pro['product_id']?>" class="btn btncart btn-danger">remove from cart</a>
-                
-            
-        
-                </td>
-            
-            </tr>
+                </tr>
 
-            <?php
-                }
-                    } 
+                <?php
+                    }
+                        } 
 
-                //  loop ends
-            ?>
+                    //  loop ends
+                ?>
+            </tbody>
         </table>
         <a href='process/order_cart.php'class="btn btn-success ms-2 btncart "name='btncheckout' class="checkout">checkout</a>     
     </div>
@@ -153,9 +154,12 @@ require_once "partials/header.php"
 <?php require_once "partials/footer.php"?>
 <script src="assets/bootstrap/js/bootstrap.bundle.js"></script>
 <script src='assets/jquery-3.7.1.min.js'></script>
+<script src='//cdn.datatables.net/2.2.2/js/dataTables.min.js'></script>
+<!-- <script src='//cdn.datatables.net/plug-ins/1.11.5/dataRender/datetime.js'></script> -->
 <script>
     $(document).ready(function(){
-                
+            
+        let table = new DataTable('#dashtable')
          $('.btnupdate').click(function(event){
             event.preventDefault()
         

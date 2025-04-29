@@ -65,8 +65,10 @@ session_start();
                 ?>
           <h2>All Products</h2>
           <div class="table-responsive">
-            <table class="table table-striped table-sm">
-            <tr>
+            <table class="table table-striped table-sm" id='dashtable'>
+              <thead>
+            <tr>        
+                        <th>S/N</th>
                         <th>product name</th>
                         <th>product image</th>
                         <th>vendor name</th>
@@ -75,10 +77,14 @@ session_start();
                         <th>action</th>
                         
                     </tr>
+                  </thead>
+                  <tbody>
                   <?php 
+                  $sn=1;
                   if($all_products){
                   foreach($all_products as $product){?>
                     <tr>
+                        <td><?php echo $sn++?></td>
                         <td><?php echo $product['product_name']?></td>
                         <td><img src="../upload/<?php echo $product['product_image']?>" class='fifty' alt="pictures of products"></td>
                         
@@ -100,6 +106,7 @@ session_start();
                     echo "<p class='alert alert-danger'>No product yet</p>";
                   }
                   ?> 
+                  </tbody>
                 </table> 
             </div>
         </main>
@@ -110,10 +117,12 @@ session_start();
 <?php require_once "partials/footer.php"?>
 
 <script src="admin_assets/jquery-3.7.1.min.js"> </script>
+<script src='//cdn.datatables.net/2.2.2/js/dataTables.min.js'></script>
+
 <script>
 
   $(document).ready(function(){
-  
+  let table= new DataTable('#dashtable')
     $('.buttondelete').click(function(){
             
             var x = confirm('are you sure you want to delete this product ?')

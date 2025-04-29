@@ -24,7 +24,7 @@ $buyer_order=$order->buyer_order_deets($id['buyer_id']);
         
             <h2 class='text-center'>ORDERS <span class='badge bg-dark text-white'><?php echo count($buyer_order);?></span></h2>
             <div class='d-none d-sm-block'>
-                <table class='table table-striped responsive table-lg' >
+                <table class='table table-striped responsive table-lg' id='dashtable'>
                     <thead>
                         <tr>
                             <th>S/N</th>
@@ -58,11 +58,7 @@ $buyer_order=$order->buyer_order_deets($id['buyer_id']);
                             }
                                 
                                 ?></td>
-                        <td><a href="buyer_view_total_orders.php?order=<?php echo $ord['order_id']?>" class='btn btn-success'>view more</a></td>
-                                
-                                
-                                
-                                
+                                <td><a href="buyer_view_total_orders.php?order=<?php echo $ord['order_id']?>" class='btn btn-success'>view more</a></td>
                             </tr>
                             <?php
                         }
@@ -127,6 +123,15 @@ $buyer_order=$order->buyer_order_deets($id['buyer_id']);
     <script src="assets/bootstrap/js/bootstrap.bundle.js"></script>
     <script src='assets/jquery-3.7.1.min.js'></script>
     <script><?php require_once "partials/buyer_logout.js"?> </script>
+    <script src='//cdn.datatables.net/2.2.2/js/dataTables.min.js'></script>
+
+<script>
+    $(document).ready(function(){
+        
+        let table = new DataTable('#dashtable')
+    })
+</script>
+
 
     </body>
 </html>

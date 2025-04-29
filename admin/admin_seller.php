@@ -73,15 +73,20 @@ require_once "partials/header.php";
                 ?>
           <div class="table-responsive">
          
-            <table class="table table-striped table-sm">
-            <tr>
+            <table class="table table-striped table-sm" id='dashtable'>
+                <thead> 
+                    <tr>
+                        <th>S/N</th>
                         <th>firstname</th>
                         <th>lastname</th>
                         <th>phone</th>
                         <th>action</th>
                         
                     </tr>
+                  </thead>
+                  <tbody>
                      <tr>
+                        <td><?php $sn=1; echo $sn++?></td>
                         <td> <?php 
                         if($user){
                           echo $user['seller_fname'];
@@ -116,102 +121,23 @@ require_once "partials/header.php";
                           
                         </td>
                     </tr>
+                  </tbody>
                 </table>
           </div>
         </main>
      </div>
 
 
-<div class='row'>
-  <div class="col-md-5 offset-md-3 shadow rounded">
-    <div class="row">
-      <div class="col-md-12 ">
-             <?php 
-                    if(isset($_SESSION['admin_update_seller_error'])){
-                        echo "<p class='alert alert-danger text-danger'>".$_SESSION['admin_update_seller_error']."</p>";
-                        unset($_SESSION['admin_update_seller_error']);
-                    }
-                
-                ?>
-                <?php 
-                    if(isset($_SESSION['admin_update_seller_feedback'])){
-                        echo "<p class='alert alert-info'>".$_SESSION['admin_update_seller_feedback']."</p>";
-                        unset($_SESSION['admin_update_seller_feedback']);
-                    }
-                
-                ?>
-          <form action="process/update_seller.php" method='post'>
-            <h1 class='text-center'>Edit Seller</h1>
-            
-              <div class="row">
-                 <div class="col-md-3">
-                    <label for="">Firstname</label>
-                  </div>
-                  <div class="col-md-6">
-                     <input type="text"name='fname' class='form-control mt-2' value="<?php echo $user['seller_fname']?>" id='fname'placeholder='enter new first name'>
-                  </div>
-              </div>
-            
-
-              <div class="row">
-                  <div class="col-md-3">
-                    <label for="">Lastname</label> 
-                  </div>
-                  <div class="col-md-6">
-                     <input type="text"name='lname' id='lname' class='form-control mt-2' value="<?php echo $user['seller_lname']?>" placeholder='enter new last name'>
-                  </div>
-              </div>
-            
-            
-              <div class="row">
-                  <div class="col-md-3">
-                    <label for="">Phone</label>
-                    
-                  </div>
-                  <div class="col-md-6">
-                     <input type="text" name='phone'class='form-control mt-2' id='phone' value="<?php echo $user['seller_phone']?>" placeholder='enter new phone'>
-                  </div>
-              </div>
-            
-            
-              <div class="row">
-                  <div class="col-md-3">
-                      <label for="">Address</label>
-                    
-                    </div>
-                    <div class="col-md-6">
-                      <input type="text" name='address' class='form-control mt-2' id='address' value="<?php echo $user['seller_address']?>" placeholder='enter new address'>
-                    </div>
-                </div>
-            
-              <div class="row">
-                  <div class="col-md-3">
-                      <label for="">Vendor name</label>
-                      
-                    </div>
-                    <div class="col-md-6">
-                     <input type="text" name='business' class='form-control mt-2' id='business' value="<?php echo $user['business_name']?>" placeholder='enter new vendor name'>
-                  </div>
-              </div>
-            
-
-            <div>
-             <p class='text-center'><button class='btn btn-success mt-3' name='btnseller'>Update</button></p> 
-            </div>
-
-          </form>
-      </div>
-    </div>
-  </div>
-</div>
 
 <?php require_once "partials/footer.php"?>
 
 <script src="admin_assets/jquery-3.7.1.min.js"> </script>
+<script src='//cdn.datatables.net/2.2.2/js/dataTables.min.js'></script>
+
 <script>
 
   $(document).ready(function(){
-  
+  let table= new DataTable('#dashtable')
     $('#btndelete').click(function(event){
             event.preventDefault()
             var x = confirm('Do you want to deactivate this seller ?')

@@ -2,10 +2,6 @@
     session_start();
     require_once "admin_guard.php";
     require_once "class/Admin.php";
-    
-
-   
-
     // $all_sellers=$test->display_all_sellers();
     // echo "<pre>";
     // print_r($all_sellers);
@@ -42,10 +38,7 @@
             </div>
           </div>
 
-         
-
           <h2>SELLERS</h2>
-
           <?php 
                     if(isset($_SESSION['admin_error'])){
                         echo "<p class='alert alert-danger text-danger'>".$_SESSION['admin_error']."</p>";
@@ -61,8 +54,9 @@
          
           <div class="table-responsive">
          
-            <table class="table table-striped table-sm">
-            <tr>
+            <table class="table table-striped table-sm" id='dashtable'>
+              <thead>
+                   <tr>
                         <th>S/N</th>
                         <th>firstname</th>
                         <th>lastname</th>
@@ -70,10 +64,13 @@
                         <th>Status</th>
                         <th>Activity</th>
                     </tr>
+                </thead>
+                <tbody>
                   <?php 
                   $sn=1;
                   if($all_sellers){
                      foreach($all_sellers as $user){?>
+
                     <tr>
                         <td><?php echo $sn++?></td>
                         <td><?php echo $user['seller_fname']?></td>
@@ -102,9 +99,9 @@
                     echo "<p class='alert alert-danger'>No sellers yet</p>";
                   }
                   ?> 
-                </table>
-               
-            </table>
+                  </tbody>
+
+                </table>  
           </div>
         </main>
      </div>
@@ -113,10 +110,13 @@
 
 <?php require_once "partials/footer.php"?>
 <script src="admin_assets/jquery-3.7.1.min.js"> </script>
+<script src='//cdn.datatables.net/2.2.2/js/dataTables.min.js'></script>
 <script>
   
   $(document).ready(function(){
-   
+    // alert('i am here')
+    let table = new DataTable('#dashtable')
+
    <?php require_once "partials/admin_logout.js"?>
    })
 </script>

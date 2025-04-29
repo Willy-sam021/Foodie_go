@@ -30,7 +30,7 @@ $review=$rate->buyer_view_reviews($_SESSION['buyer_id']);
         
             <h2 class='text-center'>REVIEWS</h2>
             <div class='d-none d-md-block'>
-             <table class='table  table-striped table_responsive'>
+             <table class='table  table-striped table_responsive' id='dashtable'>
                 <thead>
                     <tr>
                         <th>S/N</th>
@@ -129,6 +129,14 @@ $review=$rate->buyer_view_reviews($_SESSION['buyer_id']);
     <script>
          <?php require_once "partials/buyer_logout.js"?>
     </script>
+    <script src='//cdn.datatables.net/2.2.2/js/dataTables.min.js'></script>
+
+<script>
+    $(document).ready(function(){
+        
+        let table = new DataTable('#dashtable')
+    })
+</script>
 
     </body>
 </html>
