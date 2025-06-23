@@ -45,7 +45,7 @@ require_once "userguard.php";
                     <p>We envision a world where fresh, raw, and wholesome food is within reach for everyone — regardless of location or lifestyle.
                         Our dream is to be the leading online hub for raw food trading in Africa and beyond, where farmers, traders, chefs, and conscious eaters come together in a thriving, fair, and transparent digital marketplace.
                         We see: <br>
-                        🌐 A global community rooted in local food. <br>
+                        🌐 A global community rooted in local raw food. <br>
                         💡 A smarter food economy where buyers and sellers are empowered. <br>
                         🧺 A future where every plate is filled with food that’s fresh, traceable, and full of life. <br>
                         We’re not just selling food — we’re building a healthier tomorrow, one raw ingredient at a time.
