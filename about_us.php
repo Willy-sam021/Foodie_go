@@ -35,7 +35,7 @@ require_once "userguard.php";
                         🍅 Provide buyers with fresh, nutrient-rich foods that support a healthy lifestyle and clean eating. <br>
                         🚛 Simplify the food supply chain, making it transparent, traceable, and trustworthy. <br>
                         🌍 Encourage environmentally responsible practices, reduce food waste, and promote community-driven commerce. <br>
-                        Our commitment lies in creating a world where healthy food choices are accessible to all — and where every purchase supports a bigger purpose.
+                        Our commitment lies in creating a world where healthy food choices are accessible to all — and where every purchase supports a bigger purpose and a bigger future.
                         </p>
                 </div>
 
